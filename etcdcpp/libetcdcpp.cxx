@@ -1,3 +1,7 @@
+
+#ifndef LIBETCDCPP_cxx_
+#define LIBETCDCPP_cxx_
+
 #include <curl/curl.h>
 #include <iostream>
 #include <vector>
@@ -129,3 +133,5 @@ private:
 };
 
 } //end namespace
+
+#endif
