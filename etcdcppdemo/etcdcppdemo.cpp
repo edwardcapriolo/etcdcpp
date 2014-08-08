@@ -1,13 +1,11 @@
 #include <curl/curl.h>
-#include <libetcdcpp.cxx>
+#include <libetcdcpp.cpp>
 #include <vector>
 
 using namespace etcdcpp;
 
 int main () {
-  etcd_host h;
-  h.host = "localhost";
-  h.port = 4001l;
+  etcd_host h("localhost", 4001l);
   vector<etcd_host> host_list;
   host_list.push_back(h);
   etcd_session s(host_list);

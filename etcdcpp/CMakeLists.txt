@@ -1,1 +1,1 @@
-add_library (etcdcpp libetcdcpp.cxx)
+add_library (etcdcpp libetcdcpp.cpp)
