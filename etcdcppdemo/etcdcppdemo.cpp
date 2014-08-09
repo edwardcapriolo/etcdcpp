@@ -18,7 +18,7 @@ int main () {
   s.set("/c", "5" );
   Document * result = s.get("/c");
   Value& v = (*result)["action"];
-  v.GetString();
+  cout << v.GetString();
   delete result;
   return 0;
 }
