@@ -47,6 +47,13 @@ public:
     curl_global_init(CURL_GLOBAL_ALL);
   }
 
+  etcd_session(etcd_host host) {
+    vector<etcd_host> hosts;
+    hosts.push_back(host);
+    this->server_list = server_list;
+    curl_global_init(CURL_GLOBAL_ALL);
+  }
+
   /**
   * User must free returned Document *
   */
