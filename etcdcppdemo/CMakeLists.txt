@@ -9,4 +9,5 @@ link_directories (${PROJECT_SOURCE_DIR}/etcdcpp)
 add_executable (etcdcppdemo etcdcppdemo.cpp)
 
 # Link the executable to the Hello library.
-target_link_libraries (etcdcppdemo etcdcpp yajl curl) 
+target_link_libraries (etcdcppdemo etcdcpp curl) 
+
