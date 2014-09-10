@@ -12,3 +12,4 @@ add_executable (etcdcppdemo etcdcppdemo.cpp)
 # Link the executable to the library.
 target_link_libraries (etcdcppdemo etcdcpp curl) 
 
+set(CMAKE_BUILD_TYPE Debug)
