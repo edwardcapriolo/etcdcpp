@@ -5,6 +5,6 @@ project (etcdcpp)
 add_subdirectory (etcdcpp)
 add_subdirectory (etcdcppdemo)
 
-set(CMAKE_BUILD_TYPE Debug)
+#set(CMAKE_BUILD_TYPE Debug)
 
 
