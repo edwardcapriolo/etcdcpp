@@ -5,6 +5,7 @@
 #include <vector>
 #include <string.h>
 #include "rapidjson/document.h"
+#include <memory>
 
 using namespace std;
 using namespace rapidjson;

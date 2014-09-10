@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 include_directories (${PROJECT_SOURCE_DIR}/etcdcpp)
 
 # Make sure the linker can find the Hello library once it is built.
-link_directories (${PROJECT_SOURCE_DIR}/etcdcpp/build)
+link_directories (${PROJECT_SOURCE_DIR}/etcdcpp)
 
 # Add executable that is built from the source files
 add_executable (etcdcppdemo etcdcppdemo.cpp)
