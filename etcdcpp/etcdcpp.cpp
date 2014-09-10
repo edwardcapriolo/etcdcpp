@@ -8,7 +8,7 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 #include <memory>
-#include "libetcdcpp.h"
+#include "etcdcpp.h"
 
 using namespace std;
 using namespace rapidjson;
