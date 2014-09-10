@@ -1,7 +1,9 @@
+#include <iostream>
 #include <curl/curl.h>
-#include <libetcdcpp.cpp>
+#include <libetcdcpp.h>
 #include <vector>
 
+using namespace std;
 using namespace etcdcpp;
 
 int main () {
@@ -17,6 +19,7 @@ int main () {
   s.set("/c", "5" );
   std::unique_ptr<Document> result = s.get("/c");
   Value& v = (*result)["action"];
-  cout << v.GetString();
+  cout << v.GetString() << endl;
   return 0;
 }
+
