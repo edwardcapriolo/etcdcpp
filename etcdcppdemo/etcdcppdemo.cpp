@@ -1,6 +1,6 @@
 #include <iostream>
 #include <curl/curl.h>
-#include <libetcdcpp.h>
+#include <etcdcpp.h>
 #include <vector>
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
