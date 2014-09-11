@@ -7,4 +7,3 @@ add_subdirectory (etcdcppdemo)
 
 #set(CMAKE_BUILD_TYPE Debug)
 
-
