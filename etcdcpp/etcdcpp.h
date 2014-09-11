@@ -12,9 +12,6 @@ using namespace rapidjson;
 
 namespace etcdcpp {
 
-/* curl uses a callback to read urls. It passes the result buffer reference as an argument */
-int writer(char *data, size_t size, size_t nmemb, string *buffer);
-
 class etcd_host {
   public:
     etcd_host(string host, short port): host(host), port(port) {};

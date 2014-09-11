@@ -15,14 +15,14 @@ using namespace rapidjson;
 using namespace etcdcpp;
 
 template<typename T>
-string append(string s, T t) {
+string sappend(string s, T t) {
   ostringstream sstream;
   sstream << s << t;
   return sstream.str();
 }
 
 /* curl uses a callback to read urls. It passes the result buffer reference as an argument */
-int etcdcpp::writer(char *data, size_t size, size_t nmemb, string *buffer){
+int writer(char *data, size_t size, size_t nmemb, string *buffer){
   int result = 0;
   if(buffer != NULL) {
     buffer -> append(data, size * nmemb);
@@ -88,15 +88,17 @@ std::unique_ptr<Document> etcd_session::get(string key) {
 
  
 std::unique_ptr<Document> etcd_session::set(string key, string value, int ttl) {
-  return this->set(key, value + append("&ttl=", ttl));
+  string buffer = value + sappend("&ttl=", ttl);
+  return this->set(key, buffer);
 }
 
 std::unique_ptr<Document> etcd_session::set(string key, string value) {
-  return with_curl(server_list, [=](etcd_host server, CURL *curl) {
+  return with_curl(server_list, [=] (etcd_host server, CURL *curl) {
     string url = build_url(server, key);
     string buffer = "value=" + value;
-    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, buffer.c_str());
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl, CURLOPT_POST,1);
+    curl_easy_setopt(curl, CURLOPT_COPYPOSTFIELDS, buffer.c_str());
   });
 }
 
